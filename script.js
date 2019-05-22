@@ -9,19 +9,25 @@ $(".click").click(function() {
         
         console.log(searchTerm);
         
+      
+        
+        
+        
+        
         
         $.ajax({
           url: musicList,
           method: "GET",
           success: function(response) {
               var imageSrc= response[0].artwork_url;
-              var imageHtml= "<img src='"+imageSrc+"' >  " ;
+              var imageHtml= "<img src='"+imageSrc+"'>" ;
               
             console.log(imageSrc);
-              $(document.body).append(imageHtml);
+              $("#names").html(imageHtml);
           }
         }); 
     });
+    
     
     
 });
